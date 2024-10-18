@@ -1,44 +1,45 @@
 package OOP_29_30;
 
+/**
+ * класс Main.
+ */
 public class Main {
+    /**
+     * Точка входа для подачи заявки на вывод.
+     *
+     * @param args входные аргументы
+     */
     public static void main(String[] args) {
-        Author author1 = new Author();
-        author1.setName("Михаил");
-        author1.setSurname("Булгаков");
+        Author author1 = new Author("Михаил", "Булгаков");
+        Book book1 = new Book(author1, "Белая гвардия", 1923);
 
-        Author author2 = new Author();
-        author2.setName("Александр");
-        author2.setSurname("Пушкин");
+        Author author2 = new Author("Александр", "Пушкин");
+        Book book2 = new Book(author2, "Руслан и Людмила", 1822);
 
-        Author author3 = new Author();
-        author3.setName("Фёдор");
-        author3.setSurname("Достоевский");
+        Author author3 = new Author("Фёдор", "Достоевский");
+        Book book3 = new Book(author3, "Идиот", 1868);
 
-        Book book1 = new Book();
-        book1.setAuthor(author1);
-        book1.setTitle("Белая гвардия");
-        book1.setYear(1923);
-
-        Book book2 = new Book();
-        book2.setAuthor(author2);
-        book2.setTitle("Руслан и Людмила");
-        book2.setYear(1822);
-
-        Book book3 = new Book();
-        book3.setAuthor(author3);
-        book3.setTitle("Идиот");
-        book3.setYear(1868);
-
-        System.out.println(author1.getInfo());
-        System.out.println("роман:" + book1.getInfo());
+        System.out.println(author1);
+        System.out.println(book1);
         System.out.println();
 
-        System.out.println(author2.getInfo());
-        System.out.println("поэма:" + book2.getInfo());
+        System.out.println(author2);
+        System.out.println(book2);
         System.out.println();
 
-        System.out.println(author3.getInfo());
-        System.out.println("роман:" + book3.getInfo());
+        System.out.println(author3);
+        System.out.println(book3);
+/**
+ * С помощью сеттеров меняем название и год для book1, меняем название автора для book2.
+ */
+        book1.setTitle("Николка");
+        book1.setYear(1918);
+        System.out.println(book1);
+
+        book2.setAuthor(new Author("Евгений", "Онегин"));
+        System.out.println(book2);
+
+
     }
 }
 

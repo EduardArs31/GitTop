@@ -1,29 +1,39 @@
 package OOP_29_30;
 
 
+/**
+ * класс Author.
+ */
 public class Author {
     private String name;
     private String surname;
 
-    public void setName(String name) {
+    /**
+     * Создает пустой конструктор Author по умолчанию.
+     */
+    public Author() {
+    }
+
+    /**
+     * Создаёт конструктор принимающий значения всех полей класса Author(2 параметра для автора)
+     *
+     * @param name    the name
+     * @param surname the surname
+     */
+    public Author(String name, String surname) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public String getSurname() {
-        return surname;
-
-    }
-
-    public String getInfo() {
-        return name + " " + surname;
+    /**
+     * @return Возвращает описания Author с помощью нового метода toString().
+     */
+    @Override
+    public String toString() {
+        return STR."Author{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }
 
