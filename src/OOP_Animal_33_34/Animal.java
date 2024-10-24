@@ -12,6 +12,7 @@ public class Animal {
         return name;
     }
 
+
     public void makeSound(String animal) {
         System.out.println("Звук животного:");
     }

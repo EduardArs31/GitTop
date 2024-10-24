@@ -17,6 +17,7 @@ public class Bird extends Animal {
         System.out.println("Умеет ли животное летать:" + canFly);
     }
 
+
     @Override
     public void eat(String e) {
         super.eat(e);

@@ -7,7 +7,8 @@ public class Main {
         Animal cat = new Cat("Lily");
         Animal dog = new Dog("Reks");
         Animal bird = new Bird("Toto", true);
-        
+
+
         dog.makeSound("Гав-гав");
         dog.eat("Собака ест кость");
 
