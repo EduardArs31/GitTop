@@ -9,13 +9,28 @@ public class Main {
         Animal bird = new Bird("Toto", true);
 
 
-        dog.makeSound("Гав-гав");
-        dog.eat("Собака ест кость");
+        if (dog instanceof Pet) {
 
-        bird.makeSound("Чирик-чирик");
-        bird.eat("Птица ест семена");
+            dog.move();
+            dog.eat();
+            dog.makeSound();
+            dog.beFriedly();
+            ((Pet) dog).play();
 
-        cat.makeSound("Мяу-Мяу");
-        cat.eat("Кошка ест рыбу");
+        }
+        if (cat instanceof Pet) {
+            cat.move();
+            cat.eat();
+            cat.makeSound();
+            cat.beFriedly();
+            ((Pet) cat).play();
+        }
+        if (bird instanceof Animal) {
+
+            bird.move();
+            bird.eat();
+            bird.makeSound();
+        }
     }
+
 }

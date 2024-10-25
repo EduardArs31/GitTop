@@ -1,6 +1,7 @@
 package OOP_Animal_33_34;
 
-public class Animal {
+
+public abstract class Animal implements Pet {
     private String name;
 
     public Animal(String name) {
@@ -8,18 +9,32 @@ public class Animal {
     }
 
     public String getName() {
-        System.out.println("Имя животного:");
+        System.out.println("-" + "Имя животного:");
         return name;
     }
 
-
-    public void makeSound(String animal) {
-        System.out.println("Звук животного:");
+    public void makeSound() {
+        System.out.println("-" + "Звук животного:");
     }
 
-    public void eat(String e) {
-        System.out.println("Что животное ест:");
+    public void eat() {
+        System.out.println("-" + "Что животное ест?:");
     }
+
+    public void move() {
+        System.out.println("-" + "Как животное двигается?:");
+    }
+
+    @Override
+    public void play() {
+        Pet.super.play();
+    }
+
+    @Override
+    public void beFriedly() {
+        Pet.super.beFriedly();
+    }
+
 }
 
 

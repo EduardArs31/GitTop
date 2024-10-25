@@ -9,20 +9,32 @@ public class Bird extends Animal {
     }
 
     @Override
-    public void makeSound(String animal) {
-        super.makeSound(animal);
+    public void makeSound() {
+        super.makeSound();
         System.out.println("Чирик-чирик");
         System.out.println(getName());
-
-        System.out.println("Умеет ли животное летать:" + canFly);
+        System.out.println("Умеет ли животное летать?:" + canFly);
     }
 
 
     @Override
-    public void eat(String e) {
-        super.eat(e);
-        System.out.println("Птица ест семена");
-        System.out.println();
+    public void eat() {
+        super.eat();
+        System.out.println("Птица ест семена:");
+
+    }
+
+    @Override
+    public void move() {
+        super.move();
+        if (canFly == true) {
+
+            System.out.println("Птица умеет летать:" + " " + canFly);
+        }
+        if (canFly == false) {
+            System.out.println("Птица не умеет летать:" + " " + canFly);
+            System.out.println();
+        }
     }
 }
 
