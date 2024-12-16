@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-
         Library library = new Library();
 
         library.addBook(new Book(1, "Белая гвардия", "Михаил Булгаков", true));

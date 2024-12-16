@@ -118,5 +118,4 @@ public class Library {
         return books.values().stream()
                 .collect(Collectors.groupingBy(Book::getAuthor));
     }
-
 }
