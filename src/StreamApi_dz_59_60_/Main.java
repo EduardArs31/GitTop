@@ -2,6 +2,7 @@ package StreamApi_dz_59_60_;
 
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,5 +53,19 @@ public class Main {
         List<String> authorsList = library.getAuthors();
         System.out.println("Авторы, отсортированные по алфавиту:");
         authorsList.forEach(System.out::println);
+        System.out.println("-----------------------------------------------------------------------");
+
+        System.out.println("Книги  доступные и недоступные:");
+        Map<Boolean, List<Book>> partitionedBooks = library.partitionBooks();
+        System.out.println("\nДоступные книги: " + partitionedBooks.get(true));
+        System.out.println("\nНедоступные книги: " + partitionedBooks.get(false));
+
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Книги, сгруппированные по авторам:");
+        Map<String, List<Book>> groupedBooks = library.groupAuthor();
+        groupedBooks.forEach((author, booksList) -> {
+            System.out.println("Автор: " + author);
+            booksList.forEach(System.out::println);
+        });
     }
 }

@@ -97,4 +97,26 @@ public class Library {
                 .sorted()
                 .collect(Collectors.toList());
     }
+    /**
+     *	Получения с помощью stream api мапы с книгами, где с помощью
+     * метода collect(Collectors.partitioningBy(…)) книги разделяются по условию isAvailable – т.е.
+     * список доступных книг и список недоступных книг
+     */
+    public Map<Boolean, List<
+           Book>> partitionBooks() {
+        return books.values().stream()
+                .collect(Collectors.partitioningBy(Book::isAvailable));
+    }
+
+    /**
+     *	Получения с помощью stream api мапы с книгами,
+     * где с помощью метода collect(Collectors.groupingBy(…))
+     * книги группируются по авторам – сделайте чтобы в списке было несколько книг хотя бы для одного автора
+     */
+    public Map<String, List<
+            Book>> groupAuthor() {
+        return books.values().stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+    }
+
 }
