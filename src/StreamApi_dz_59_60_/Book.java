@@ -6,7 +6,6 @@ public class Book {
     private String author;
     private boolean isAvailable;
 
-
     public Book(int id, String title, String author, boolean isAvailable) {
         this.id = id;
         this.title = title;

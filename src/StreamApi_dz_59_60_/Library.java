@@ -1,7 +1,6 @@
 package StreamApi_dz_59_60_;
 
 
-
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +20,7 @@ public class Library {
 
     /**
      * Метод добавляет книгу в библиотеку.
+     *
      * @param book the book
      */
     public void addBook(Book book) {
@@ -30,6 +30,7 @@ public class Library {
 
     /**
      * Книга добавленная по id
+     *
      * @param id the id
      * @return the book
      */
@@ -47,6 +48,7 @@ public class Library {
 
     /**
      * Возвращает книги отсортированные по названию
+     *
      * @return the books
      */
     public List<Book> getBooks() {
@@ -57,6 +59,7 @@ public class Library {
 
     /**
      * Возвращает список книг с сортировкой по названию,
+     *
      * @param available the available
      * @return the books
      */
@@ -69,6 +72,7 @@ public class Library {
 
     /**
      * Возвращает Общее количество книг в библиотеке.
+     *
      * @return the total books count
      */
     public long getCountBooks() {
@@ -77,6 +81,7 @@ public class Library {
 
     /**
      * Возвращает количество доступных или недоступных книг в библиотеке.
+     *
      * @param available the available
      * @return the books count
      */
@@ -88,6 +93,7 @@ public class Library {
 
     /**
      * Получения списка авторов, без дубликатов с сортировкой по алфавиту
+     *
      * @return the authors
      */
     public List<String> getAuthors() {
@@ -97,19 +103,20 @@ public class Library {
                 .sorted()
                 .collect(Collectors.toList());
     }
+
     /**
-     *	Получения с помощью stream api мапы с книгами, где с помощью
+     * Получения с помощью stream api мапы с книгами, где с помощью
      * метода collect(Collectors.partitioningBy(…)) книги разделяются по условию isAvailable – т.е.
      * список доступных книг и список недоступных книг
      */
     public Map<Boolean, List<
-           Book>> partitionBooks() {
+            Book>> partitionBooks() {
         return books.values().stream()
                 .collect(Collectors.partitioningBy(Book::isAvailable));
     }
 
     /**
-     *	Получения с помощью stream api мапы с книгами,
+     * Получения с помощью stream api мапы с книгами,
      * где с помощью метода collect(Collectors.groupingBy(…))
      * книги группируются по авторам – сделайте чтобы в списке было несколько книг хотя бы для одного автора
      */

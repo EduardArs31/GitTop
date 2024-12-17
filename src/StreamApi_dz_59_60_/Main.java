@@ -65,6 +65,7 @@ public class Main {
         groupedBooks.forEach((author, booksList) -> {
             System.out.println("Автор: " + author);
             booksList.forEach(System.out::println);
+
         });
     }
 }
